@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build folder
+build/
+dist/
+
+# Dependency directories
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Debug logs
+debug.log
+
+# Yarn
+yarn-error.log
+.pnp
+.pnp.js
