@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
 
 interface User {
   _id: string;
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="">
       <Header />
-      <h1>List of Users</h1>
+      <Hero />
       <ul>
         {users.map((user) => (
           <li key={user._id}>{user.username}</li>
