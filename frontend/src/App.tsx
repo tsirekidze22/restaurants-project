@@ -1,10 +1,9 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
+import Header from "./components/Header/Header";
 
 interface User {
   _id: string;
   username: string;
-  // Add other user properties as needed
 }
 
 function App() {
@@ -18,7 +17,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="">
+      <Header />
       <h1>List of Users</h1>
       <ul>
         {users.map((user) => (
