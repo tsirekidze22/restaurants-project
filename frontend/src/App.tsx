@@ -3,31 +3,27 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import RestaurantsList from "./components/RestaurantsList/RestaurantsList";
 
-interface User {
+interface Restaurant {
   _id: string;
-  username: string;
+  name: string;
+  address: string;
 }
 
 function App() {
-  const [users, setUsers] = useState<User[]>([]);
+  const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api/users")
+    fetch("http://localhost:3001/api/restaurants")
       .then((response) => response.json())
-      .then((data) => setUsers(data))
-      .catch((error) => console.error("Error fetching users:", error));
+      .then((data) => setRestaurants(data))
+      .catch((error) => console.error("Error fetching restaurants:", error));
   }, []);
 
   return (
     <div className="">
       <Header />
       <Hero />
-      <RestaurantsList />
-      <ul>
-        {users.map((user) => (
-          <li key={user._id}>{user.username}</li>
-        ))}
-      </ul>
+      <RestaurantsList restaurants={restaurants} />
     </div>
   );
 }
