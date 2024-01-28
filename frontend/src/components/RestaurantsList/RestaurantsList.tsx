@@ -1,6 +1,7 @@
 import React from "react";
 import "./RestaurantsList.scss";
 import { spawn } from "child_process";
+import ResItem from "../ResItem/ResItem";
 
 const restaurants = [
   {
@@ -97,61 +98,16 @@ const restaurants = [
 
 const RestaurantsList = () => {
   return (
-    <section className="restaurants-section py-5 container">
+    <section className="restaurants-section py-3 py-md-5 mt-5 container">
       <h2>Discover Dining Gems</h2>
-      <p>
+      <p className="text-secondary pt-3 pb-4 mb-4 section-desc">
         Explore a curated selection of top-rated restaurants, handpicked for an
-        exceptional dining experience."
+        exceptional dining experience.
       </p>
 
       <ul className="restaurant-list d-flex flex-wrap flex-column gap-4 flex-md-row">
-        {restaurants.map((res) => (
-          <li key={res.name} className="d-flex res-item">
-            <div
-              className="col-5 p-3 res-img-container"
-              style={{
-                backgroundImage: `url(${res.imageSrc})`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <div className="d-inline-flex align-items-center img-tag col-auto gap-2 bg-light-red px-3 py-2">
-                <img src="/assets/images/star.svg" alt="star" />
-                <span>{res.rate}</span>
-              </div>
-            </div>
-            <div className="text-section px-4 py-3 col-7">
-              <h3>{res.name}</h3>
-              <ul className="py-2">
-                {res.tags.map((tag, index) => (
-                  <li key={tag} className="d-inline-flex gap-1">
-                    <span className="res-tag">{tag}</span>
-                    {index < res.tags.length - 1 && (
-                      <span className="me-1">&bull;</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              <p className="desc text-secondary py-3">{res.description}</p>
-              <div className="d-flex py-2 align-items-center justify-content-between">
-                {`${res.hours.open} - ${res.hours.close}`}
-                <h4
-                  className="status"
-                  style={{
-                    color: res.status === "open" ? "#5EAE53" : "salmon",
-                  }}
-                >
-                  {res.status}
-                </h4>
-              </div>
-
-              <div className="address d-flex align-items-center gap-2">
-                {res.address}
-                <img src="/assets/images/address-icon.svg" alt="working" />
-              </div>
-            </div>
-          </li>
+        {restaurants.map((res, index) => (
+          <ResItem key={index} res={res}/>
         ))}
       </ul>
     </section>
