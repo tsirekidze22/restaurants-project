@@ -58,5 +58,15 @@
       max-width: 310px;
       width: 100%;
     }
+
+    .not-found-wrapper {
+      img {
+        width: 50%;
+      }
+
+      h3 {
+        font-size: 32px;
+      }
+    }
   }
 }

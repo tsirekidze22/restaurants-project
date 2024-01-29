@@ -5,10 +5,8 @@ const { MongoClient } = require("mongodb");
 const app = express();
 const port = 3001;
 
-// Enable CORS
 app.use(cors());
 
-// MongoDB connection string
 const uri =
   "mongodb+srv://tsirekidze022:tsirekidze99@cluster0.fulnsyr.mongodb.net/firstDb?retryWrites=true&w=majority";
 
@@ -33,10 +31,18 @@ app.get("/api/restaurants", async (req, res) => {
     const db = await connectToDatabase();
     const restaurantsCollection = db.collection("restaurants");
 
-    // Use MongoDB query to find all restaurants
-    const allRestaurants = await restaurantsCollection.find({}).toArray();
+    const searchTerm = req.query.searchTerm;
+    let query = {};
 
-    res.json(allRestaurants);
+    if (searchTerm) {
+      query = { name: { $regex: `.*${searchTerm}.*`, $options: "i" } };
+    }
+
+    const filteredRestaurants = await restaurantsCollection
+      .find(query)
+      .toArray();
+
+    res.json(filteredRestaurants);
   } catch (error) {
     console.error("Error fetching restaurants:", error);
     res.status(500).json({ error: "Internal server error" });
