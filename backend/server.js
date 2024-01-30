@@ -1,18 +1,9 @@
 const express = require("express");
-const cors = require("cors");
-const connectToDatabase = require("./db"); 
+const connectToDatabase = require("./db");
 require("dotenv").config();
 
 const app = express();
 const port = 3001;
-
-app.use(
-  cors({
-    origin: ["https://res-os-test-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
 
 app.get("/", (req, res) => {
   res.json("Success");
