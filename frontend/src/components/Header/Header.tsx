@@ -25,9 +25,9 @@ const Header = () => {
             src="assets/images/animated-logo.gif"
             alt="Logo"
             className="logo"
-            style={{ width: 60 }}
+            style={{ width: 50 }}
           />
-          <h2 className="logo-text">TasteTrail</h2>
+          <h2 className="logo-text">CulinaryCompass</h2>
         </a>
 
         <div className="d-flex align-items-center gap-5">
