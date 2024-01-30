@@ -1,0 +1,15 @@
+.social-icons {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #eb8e78;
+    border-radius: 50%;
+    transition: scale 0.3s ease-in;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}

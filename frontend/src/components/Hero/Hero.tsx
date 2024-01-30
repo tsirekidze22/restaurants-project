@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.scss";
+import SocialIcons from "../SocialIcons/SocialIcons";
 
 const Hero = () => {
   return (
@@ -13,24 +14,9 @@ const Hero = () => {
           </p>
 
           <button className="book-table mt-4">Book a Table</button>
-
-          <ul className="social-icons d-none d-md-flex gap-2 mt-5 pt-4">
-            <li>
-              <a href="https://facebook.com" target="_blank">
-                <img src="/assets/images/Facebook.svg" alt="facebook" />
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com" target="_blank">
-                <img src="/assets/images/Insta.svg" alt="facebook" />
-              </a>
-            </li>
-            <li>
-              <a href="https://youtube.com" target="_blank">
-                <img src="/assets/images/youtube.svg" alt="facebook" />
-              </a>
-            </li>
-          </ul>
+          <div className="d-none d-md-block mt-5 pt-4">
+            <SocialIcons />
+          </div>
         </div>
         <div className="images-container">
           <div className="image-container-main d-none d-md-block"></div>

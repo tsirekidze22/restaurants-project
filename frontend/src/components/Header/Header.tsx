@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./Header.scss";
+import SocialIcons from "../SocialIcons/SocialIcons";
 
 const Header = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ const Header = () => {
               <a href="#">Events</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
@@ -38,30 +39,16 @@ const Header = () => {
                 <a href="#">Restaurants</a>
               </li>
               <li>
-                <a href="#">Events</a>
+                <a href="#contact">Events</a>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
 
-            <ul className="social-icons d-flex d-md-none gap-2 mt-5 pt-4">
-              <li>
-                <a href="https://facebook.com" target="_blank">
-                  <img src="/assets/images/Facebook.svg" alt="facebook" />
-                </a>
-              </li>
-              <li>
-                <a href="https://instagram.com" target="_blank">
-                  <img src="/assets/images/Insta.svg" alt="facebook" />
-                </a>
-              </li>
-              <li>
-                <a href="https://youtube.com" target="_blank">
-                  <img src="/assets/images/youtube.svg" alt="facebook" />
-                </a>
-              </li>
-            </ul>
+            <div className="py-5">
+              <SocialIcons />
+            </div>
           </div>
         </CSSTransition>
         <button className="book-table d-none d-md-block">Book a Table</button>

@@ -1,4 +1,15 @@
 footer {
-  background-color: #5eae53;
+  background-color: #333333;
   color: #fff;
+
+  .footer-nav {
+    li {
+      font-weight: 300;
+      font-size: 18px;
+    }
+  }
+
+  .copyright {
+    color: rgba(255, 255, 255, 0.5);
+  }
 }
