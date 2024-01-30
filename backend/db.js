@@ -1,4 +1,3 @@
-// db.js
 const { MongoClient } = require("mongodb");
 
 const uri =
@@ -14,7 +13,6 @@ async function connectToDatabase() {
     await client.connect();
     console.log("Connected to MongoDB");
 
-    // Log the database name (optional)
     const databaseName = client.db().databaseName;
     console.log(`Connected to database: ${databaseName}`);
 
