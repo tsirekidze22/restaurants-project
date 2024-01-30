@@ -4,7 +4,15 @@ require("dotenv").config();
 
 const app = express();
 const port = 3001;
+const cors = require("cors");
 
+app.use(
+  cors({
+    origin: ["https://res-os-test-frontend.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.get("/", (req, res) => {
   res.json("Success");
 });
