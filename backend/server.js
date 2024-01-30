@@ -8,7 +8,7 @@ const port = 3001;
 
 app.use(
   cors({
-    origin: ["https://res-os-test-frontend.vercel.app/"],
+    origin: ["https://res-os-test-frontend.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })

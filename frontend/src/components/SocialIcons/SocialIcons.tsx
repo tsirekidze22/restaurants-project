@@ -10,12 +10,12 @@ const SocialIcons = () => {
       </li>
       <li>
         <a href="https://instagram.com" target="_blank">
-          <img src="/assets/images/Insta.svg" alt="facebook" />
+          <img src="/assets/images/Insta.svg" alt="instagram" />
         </a>
       </li>
       <li>
         <a href="https://youtube.com" target="_blank">
-          <img src="/assets/images/youtube.svg" alt="facebook" />
+          <img src="/assets/images/Youtube.svg" alt="youtube" />
         </a>
       </li>
     </ul>
