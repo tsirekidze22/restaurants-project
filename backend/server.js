@@ -14,6 +14,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.json("Success");
+});
+
 app.get("/api/restaurants", async (req, res) => {
   try {
     const db = await connectToDatabase();
