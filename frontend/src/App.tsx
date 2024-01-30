@@ -20,7 +20,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/restaurants${
+          `https://res-os-test-api.vercel.app/api/restaurants${
             searchTerm === "" ? "" : `?searchTerm=${searchTerm}`
           }`
         );
