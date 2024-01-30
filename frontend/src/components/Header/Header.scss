@@ -15,10 +15,20 @@ header {
     background-color: #5eae53;
     @include d-flex(space-between, center);
 
+    .logo-text {
+      font-size: 42px;
+      font-family: "Dancing Script", cursive;
+      color: #fff;
+      font-weight: 700;
+    }
     .nav-list {
       a {
         color: #fff;
         font-size: 20px;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          color: #f87d61;
+        }
       }
     }
 
@@ -61,8 +71,6 @@ header {
         transform: translateX(100%);
         transition: transform 300ms ease-in-out;
       }
-
-      
     }
 
     .burger-menu-icon {

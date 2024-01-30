@@ -3,29 +3,46 @@ import { CSSTransition } from "react-transition-group";
 import "./Header.scss";
 import SocialIcons from "../SocialIcons/SocialIcons";
 
+const navList = [
+  {
+    label: "Restaurants",
+    link: "#restaurants",
+  },
+  {
+    label: "Contact",
+    link: "#contact",
+  },
+];
+
 const Header = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
   return (
     <header className="header">
       <div className="container px-3 header-content">
-        <a href="/">
-          <img src="assets/images/logo2.png" alt="Logo" className="logo" />
+        <a href="/" className="d-flex align-items-center">
+          <img
+            src="assets/images/animated-logo.gif"
+            alt="Logo"
+            className="logo"
+            style={{ width: 60 }}
+          />
+          <h2 className="logo-text">TasteTrail</h2>
+          
         </a>
 
-        <nav className="d-none d-md-block">
-          <ul className="d-flex gap-5 nav-list">
-            <li>
-              <a href="#">Restaurants</a>
-            </li>
-            <li>
-              <a href="#">Events</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
+        <div className="d-flex align-items-center gap-5">
+          <nav className="d-none d-md-block">
+            <ul className="d-flex gap-5 nav-list">
+              {navList.map((item) => (
+                <li key={item.label}>
+                  <a href={item.link}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <button className="book-table d-none d-md-block">Book a Table</button>
+        </div>
         <CSSTransition
           in={isBurgerMenuOpen}
           timeout={300}
@@ -35,15 +52,11 @@ const Header = () => {
         >
           <div className="burger-menu">
             <ul className="d-flex flex-column gap-4 nav-list">
-              <li>
-                <a href="#">Restaurants</a>
-              </li>
-              <li>
-                <a href="#contact">Events</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
+              {navList.map((item) => (
+                <li key={item.label} onClick={() => setIsBurgerMenuOpen(false)}>
+                  <a href={item.link}>{item.label}</a>
+                </li>
+              ))}
             </ul>
 
             <div className="py-5">
@@ -51,7 +64,6 @@ const Header = () => {
             </div>
           </div>
         </CSSTransition>
-        <button className="book-table d-none d-md-block">Book a Table</button>
 
         <img
           src={

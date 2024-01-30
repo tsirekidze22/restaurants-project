@@ -13,16 +13,26 @@ interface Restaurant {
 function App() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:3001/api/restaurants${
-        searchTerm === "" ? "" : `?searchTerm=${searchTerm}`
-      }`
-    )
-      .then((response) => response.json())
-      .then((data) => setRestaurants(data))
-      .catch((error) => console.error("Error fetching restaurants:", error));
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3001/api/restaurants${
+            searchTerm === "" ? "" : `?searchTerm=${searchTerm}`
+          }`
+        );
+        const data = await response.json();
+        setRestaurants(data);
+      } catch (error) {
+        console.error("Error fetching restaurants:", error);
+      } finally {
+        setLoading(false); // Set loading to false regardless of success or error
+      }
+    };
+
+    fetchData();
   }, [searchTerm]);
 
   return (
@@ -33,6 +43,7 @@ function App() {
         restaurants={restaurants}
         searchTerm={searchTerm}
         onSearchTermChange={setSearchTerm}
+        loading={loading}
       />
       <Footer />
     </>
