@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import RestaurantsList from "./components/RestaurantsList/RestaurantsList";
 import Footer from "./components/Footer/Footer";
+import axios from "axios";
 
 interface Restaurant {
   _id: string;
@@ -18,17 +19,17 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           `http://localhost:3001/api/restaurants${
             searchTerm === "" ? "" : `?searchTerm=${searchTerm}`
           }`
         );
-        const data = await response.json();
+        const data = response.data;
         setRestaurants(data);
       } catch (error) {
         console.error("Error fetching restaurants:", error);
       } finally {
-        setLoading(false); // Set loading to false regardless of success or error
+        setLoading(false);
       }
     };
 

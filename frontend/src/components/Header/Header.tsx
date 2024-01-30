@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./Header.scss";
 import SocialIcons from "../SocialIcons/SocialIcons";
@@ -28,7 +28,6 @@ const Header = () => {
             style={{ width: 60 }}
           />
           <h2 className="logo-text">TasteTrail</h2>
-          
         </a>
 
         <div className="d-flex align-items-center gap-5">
