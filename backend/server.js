@@ -6,7 +6,13 @@ require("dotenv").config();
 const app = express();
 const port = 3001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://res-os-test-api.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 app.get("/api/restaurants", async (req, res) => {
   try {

@@ -15,7 +15,7 @@ function App() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const fetchData = async () => {
       try {
