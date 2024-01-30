@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  web:
+    depends_on:
+      - api
+    build: ./frontend
+    ports:
+      - 3000:3000
+    environment:
+      API_URL: http://localhost:3001
+
+  api:
+    depends_on:
+      - db
+    build: ./backend
+    ports:
+      - 3001:3001
+    environment:
+      DB_URL: mongodb+srv://tsirekidze022:tsirekidze99@cluster0.fulnsyr.mongodb.net/firstDb?retryWrites=true&w=majority
+
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - restaurants:/data/db
+
+volumes:
+  restaurants:
