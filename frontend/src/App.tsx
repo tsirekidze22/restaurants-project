@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero";
 import RestaurantsList from "./components/RestaurantsList/RestaurantsList";
 import Footer from "./components/Footer/Footer";
 import axios from "axios";
+import ContactForm from "./components/ContactSection/ContactSection";
 
 interface Restaurant {
   _id: string;
@@ -39,6 +40,7 @@ function App() {
   return (
     <>
       <Header />
+
       <Hero />
       <RestaurantsList
         restaurants={restaurants}
@@ -46,6 +48,7 @@ function App() {
         onSearchTermChange={setSearchTerm}
         loading={loading}
       />
+      <ContactForm/>
       <Footer />
     </>
   );

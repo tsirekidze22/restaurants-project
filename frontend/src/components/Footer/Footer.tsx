@@ -2,7 +2,7 @@ import "./Footer.scss";
 import SocialIcons from "../SocialIcons/SocialIcons";
 const Footer = () => {
   return (
-    <footer className="mt-5" id="contact">
+    <footer>
       <div className="footer-cointent container">
         <div className="py-5 d-flex flex-column flex-md-row gap-5 gap-md-0 align-items-center justify-content-between">
           <div className="footer-nav">
