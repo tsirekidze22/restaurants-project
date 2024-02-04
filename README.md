@@ -1,4 +1,4 @@
-# resOS-test
+# Restaurant Search
 
 Welcome to the resOS-test project!
 
