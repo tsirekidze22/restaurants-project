@@ -1,6 +1,6 @@
 # Restaurant Search
 
-Welcome to the resOS-test project!
+Welcome to the Restaurant Search project!
 
 ## Overview
 
