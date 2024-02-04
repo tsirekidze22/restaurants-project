@@ -9,6 +9,10 @@ const navList = [
     link: "#restaurants",
   },
   {
+    label: "Services",
+    link: "#services",
+  },
+  {
     label: "Contact",
     link: "#contact",
   },
@@ -40,7 +44,9 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-          <button className="book-table d-none d-md-block">Book a Table</button>
+          <a href="#services">
+            <button className="book-table d-none d-md-block">Learn More</button>
+          </a>
         </div>
         <CSSTransition
           in={isBurgerMenuOpen}

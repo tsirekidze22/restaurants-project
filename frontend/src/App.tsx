@@ -5,6 +5,7 @@ import RestaurantsList from "./components/RestaurantsList/RestaurantsList";
 import Footer from "./components/Footer/Footer";
 import axios from "axios";
 import ContactForm from "./components/ContactSection/ContactSection";
+import OurServices from "./components/OurServices/OurServices";
 
 interface Restaurant {
   _id: string;
@@ -48,7 +49,8 @@ function App() {
         onSearchTermChange={setSearchTerm}
         loading={loading}
       />
-      <ContactForm/>
+      <OurServices />
+      <ContactForm />
       <Footer />
     </>
   );

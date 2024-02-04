@@ -12,7 +12,9 @@ const Hero = () => {
             guide to discovering and savoring the best restaurants.
           </p>
 
-          <button className="book-table mt-4">Book a Table</button>
+          <a href="#services">
+            <button className="book-table mt-4">Learn More</button>
+          </a>
           <div className="d-none d-md-block mt-5 pt-4">
             <SocialIcons />
           </div>
