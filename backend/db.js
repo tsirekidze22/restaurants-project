@@ -9,7 +9,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["https://res-os-test-frontend.vercel.app"],
+    origin: ["https://yourculinarycompass.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
