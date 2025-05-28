@@ -16,7 +16,11 @@ app.use(
 
 app.get("/api/restaurants", async (req, res) => {
   try {
+    console.log("🔍 Incoming request to /api/restaurants");
+
     const db = await connectToDatabase();
+    console.log("✅ Connected to database");
+
     const restaurantsCollection = db.collection("restaurants");
 
     const searchTerm = req.query.searchTerm;
@@ -30,9 +34,10 @@ app.get("/api/restaurants", async (req, res) => {
       .find(query)
       .toArray();
 
+    console.log("✅ Fetched restaurants:", filteredRestaurants);
     res.json(filteredRestaurants);
   } catch (error) {
-    console.error("Error fetching restaurants:", error);
+    console.error("❌ Error fetching restaurants:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
